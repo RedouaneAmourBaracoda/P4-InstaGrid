@@ -480,6 +480,8 @@
 				DEVELOPMENT_TEAM = CJ4U3HXF7J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "P4-InstaGrid/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to capture photos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app uses library to import photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -508,6 +510,8 @@
 				DEVELOPMENT_TEAM = CJ4U3HXF7J;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "P4-InstaGrid/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to capture photos.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This app uses library to import photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

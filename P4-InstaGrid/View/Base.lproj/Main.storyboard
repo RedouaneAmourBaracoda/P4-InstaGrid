@@ -37,12 +37,18 @@
                                                         <state key="normal" image="Plus">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="plusButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CbX-1r-V6e"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhn-iQ-mnU">
                                                         <rect key="frame" x="151.66666666666663" y="0.0" width="141.33333333333337" height="141.33333333333334"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="plusButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s7b-xj-TFp"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="tintColor" systemColor="linkColor"/>
@@ -57,11 +63,17 @@
                                                         <state key="normal" image="Plus">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="plusButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vtd-v9-bwC"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbG-ky-j0B">
                                                         <rect key="frame" x="151.66666666666663" y="0.0" width="141.33333333333337" height="141.66666666666666"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
+                                                        <connections>
+                                                            <action selector="plusButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nuY-NE-ATB"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="tintColor" systemColor="linkColor"/>
@@ -87,8 +99,12 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Bis-vg-9Lb" secondAttribute="height" multiplier="1:1" id="PTM-ao-2qC"/>
                                         </constraints>
+                                        <color key="tintColor" systemColor="tintColor"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="Layout 1"/>
+                                        <connections>
+                                            <action selector="layoutButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jgk-qa-ybv"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGk-RH-9P8">
                                         <rect key="frame" x="88.666666666666657" y="0.0" width="85.666666666666657" height="85.666666666666671"/>
@@ -97,6 +113,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="Layout 2"/>
+                                        <connections>
+                                            <action selector="layoutButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jgk-uP-Z8E"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1o-E3-zy2">
                                         <rect key="frame" x="177.33333333333334" y="0.0" width="85.666666666666657" height="85.666666666666671"/>
@@ -105,6 +124,9 @@
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="Layout 3"/>
+                                        <connections>
+                                            <action selector="layoutButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JkN-1v-IIP"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <variation key="heightClass=compact" axis="vertical"/>
@@ -317,6 +339,17 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="mainBlueView" destination="KSE-We-KbO" id="i6x-VR-xyd"/>
+                        <outlet property="swipeLabel" destination="3jv-A7-JMa" id="J5p-ad-k1a"/>
+                        <outletCollection property="layoutCollection" destination="Bis-vg-9Lb" collectionClass="NSMutableArray" id="IfQ-Fs-67t"/>
+                        <outletCollection property="layoutCollection" destination="sGk-RH-9P8" collectionClass="NSMutableArray" id="GVU-BQ-9gm"/>
+                        <outletCollection property="layoutCollection" destination="H1o-E3-zy2" collectionClass="NSMutableArray" id="vyK-LQ-rfl"/>
+                        <outletCollection property="plusButtonsCollection" destination="4Xu-uZ-ycv" collectionClass="NSMutableArray" id="4Gt-EK-zLh"/>
+                        <outletCollection property="plusButtonsCollection" destination="lhn-iQ-mnU" collectionClass="NSMutableArray" id="JiV-R7-TMh"/>
+                        <outletCollection property="plusButtonsCollection" destination="7iB-Ks-0pI" collectionClass="NSMutableArray" id="60x-Qt-I8v"/>
+                        <outletCollection property="plusButtonsCollection" destination="PbG-ky-j0B" collectionClass="NSMutableArray" id="vek-Tw-4Tk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
