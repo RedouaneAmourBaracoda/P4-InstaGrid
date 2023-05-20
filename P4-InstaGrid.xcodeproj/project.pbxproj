@@ -103,14 +103,14 @@
 		B8CFAF502A18DD7400C92CC1 /* P4-InstaGrid */ = {
 			isa = PBXGroup;
 			children = (
-				B8CFAF512A18DD7400C92CC1 /* AppDelegate.swift */,
+				B8CFAF872A18E1B900C92CC1 /* Model */,
+				B8CFAF852A18E19900C92CC1 /* View */,
+				B8CFAF862A18E1A600C92CC1 /* Controller */,
+				B8CFAF882A18E1CB00C92CC1 /* Supporting files */,
 				B8CFAF532A18DD7400C92CC1 /* SceneDelegate.swift */,
-				B8CFAF552A18DD7400C92CC1 /* ViewController.swift */,
+				B8CFAF512A18DD7400C92CC1 /* AppDelegate.swift */,
 				B8CFAF832A18E0C900C92CC1 /* ThirstySoftRegular.otf */,
 				B8CFAF812A18DFFC00C92CC1 /* Delm-Medium.otf */,
-				B8CFAF572A18DD7400C92CC1 /* Main.storyboard */,
-				B8CFAF5A2A18DD7600C92CC1 /* Assets.xcassets */,
-				B8CFAF5C2A18DD7600C92CC1 /* LaunchScreen.storyboard */,
 				B8CFAF5F2A18DD7600C92CC1 /* Info.plist */,
 			);
 			path = "P4-InstaGrid";
@@ -131,6 +131,38 @@
 				B8CFAF742A18DD7600C92CC1 /* P4_InstaGridUITestsLaunchTests.swift */,
 			);
 			path = "P4-InstaGridUITests";
+			sourceTree = "<group>";
+		};
+		B8CFAF852A18E19900C92CC1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B8CFAF572A18DD7400C92CC1 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B8CFAF862A18E1A600C92CC1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B8CFAF552A18DD7400C92CC1 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B8CFAF872A18E1B900C92CC1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B8CFAF882A18E1CB00C92CC1 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				B8CFAF5C2A18DD7600C92CC1 /* LaunchScreen.storyboard */,
+				B8CFAF5A2A18DD7600C92CC1 /* Assets.xcassets */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

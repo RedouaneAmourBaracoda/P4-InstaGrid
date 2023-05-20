@@ -80,7 +80,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="m9L-sH-8Pf" userLabel="Choice Sub Stack View">
-                                <rect key="frame" x="65" y="639.33333333333337" width="263" height="85.666666666666629"/>
+                                <rect key="frame" x="65" y="637.66666666666663" width="263" height="85.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bis-vg-9Lb">
                                         <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="85.666666666666671"/>
@@ -107,7 +107,6 @@
                                         <state key="normal" backgroundImage="Layout 3"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.8120779991" green="0.921716392" blue="0.65924048420000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <variation key="heightClass=compact" axis="vertical"/>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Instagrid" translatesAutoresizingMaskIntoConstraints="NO" id="VVh-O0-5Kk">
@@ -140,7 +139,7 @@
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwo-TT-z2S" userLabel="My Clear Button">
-                                <rect key="frame" x="150.66666666666666" y="788" width="91.666666666666657" height="38.666666666666629"/>
+                                <rect key="frame" x="160.66666666666666" y="789.33333333333337" width="71.666666666666657" height="37.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="CLEAR">
                                     <fontDescription key="titleFontDescription" name="Delm-Medium" family="Delm" pointSize="21"/>
@@ -148,10 +147,10 @@
                                 </buttonConfiguration>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="skY-sn-tr9" userLabel="Toggle Button Stack View">
-                                <rect key="frame" x="19.333333333333343" y="582.66666666666663" width="354.66666666666663" height="46.666666666666629"/>
+                                <rect key="frame" x="56.333333333333343" y="582.66666666666663" width="280.66666666666663" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npM-9W-zZ4">
-                                        <rect key="frame" x="0.0" y="0.0" width="176.33333333333334" height="46.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="139.33333333333334" height="45"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Toggle photos">
                                             <backgroundConfiguration key="background"/>
@@ -160,7 +159,7 @@
                                         </buttonConfiguration>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZk-Gk-cwa">
-                                        <rect key="frame" x="178.33333333333331" y="0.0" width="176.33333333333331" height="46.666666666666664"/>
+                                        <rect key="frame" x="141.33333333333331" y="0.0" width="139.33333333333331" height="45"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="OK">
                                             <fontDescription key="titleFontDescription" name="Delm-Medium" family="Delm" pointSize="28"/>
@@ -171,10 +170,10 @@
                                 <variation key="heightClass=compact" axis="vertical"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gDN-Dz-4WJ" userLabel="Swipe Stack View">
-                                <rect key="frame" x="99.666666666666686" y="189.66666666666666" width="194" height="71.999999999999972"/>
+                                <rect key="frame" x="122.66666666666669" y="189.66666666666666" width="148" height="71.999999999999972"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="3YC-aH-rVl">
-                                        <rect key="frame" x="85.333333333333329" y="0.0" width="23" height="37"/>
+                                        <rect key="frame" x="62.333333333333329" y="0.0" width="23" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="23" id="4ep-C4-Ev0"/>
                                             <constraint firstAttribute="height" constant="37.329999999999998" id="hYq-dP-p9u"/>
@@ -182,7 +181,7 @@
                                         <variation key="heightClass=compact" image="Arrow Left"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jv-A7-JMa">
-                                        <rect key="frame" x="0.0" y="45" width="194" height="27"/>
+                                        <rect key="frame" x="0.0" y="45" width="148" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="26.670000000000002" id="cXD-EJ-RBi"/>
                                         </constraints>
