@@ -16,6 +16,8 @@
 		B8CFAF692A18DD7600C92CC1 /* P4_InstaGridTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CFAF682A18DD7600C92CC1 /* P4_InstaGridTests.swift */; };
 		B8CFAF732A18DD7600C92CC1 /* P4_InstaGridUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CFAF722A18DD7600C92CC1 /* P4_InstaGridUITests.swift */; };
 		B8CFAF752A18DD7600C92CC1 /* P4_InstaGridUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CFAF742A18DD7600C92CC1 /* P4_InstaGridUITestsLaunchTests.swift */; };
+		B8CFAF822A18DFFC00C92CC1 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = B8CFAF812A18DFFC00C92CC1 /* Delm-Medium.otf */; };
+		B8CFAF842A18E0C900C92CC1 /* ThirstySoftRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = B8CFAF832A18E0C900C92CC1 /* ThirstySoftRegular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		B8CFAF6E2A18DD7600C92CC1 /* P4-InstaGridUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "P4-InstaGridUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8CFAF722A18DD7600C92CC1 /* P4_InstaGridUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P4_InstaGridUITests.swift; sourceTree = "<group>"; };
 		B8CFAF742A18DD7600C92CC1 /* P4_InstaGridUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P4_InstaGridUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B8CFAF812A18DFFC00C92CC1 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
+		B8CFAF832A18E0C900C92CC1 /* ThirstySoftRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstySoftRegular.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				B8CFAF512A18DD7400C92CC1 /* AppDelegate.swift */,
 				B8CFAF532A18DD7400C92CC1 /* SceneDelegate.swift */,
 				B8CFAF552A18DD7400C92CC1 /* ViewController.swift */,
+				B8CFAF832A18E0C900C92CC1 /* ThirstySoftRegular.otf */,
+				B8CFAF812A18DFFC00C92CC1 /* Delm-Medium.otf */,
 				B8CFAF572A18DD7400C92CC1 /* Main.storyboard */,
 				B8CFAF5A2A18DD7600C92CC1 /* Assets.xcassets */,
 				B8CFAF5C2A18DD7600C92CC1 /* LaunchScreen.storyboard */,
@@ -233,6 +239,8 @@
 			files = (
 				B8CFAF5E2A18DD7600C92CC1 /* LaunchScreen.storyboard in Resources */,
 				B8CFAF5B2A18DD7600C92CC1 /* Assets.xcassets in Resources */,
+				B8CFAF842A18E0C900C92CC1 /* ThirstySoftRegular.otf in Resources */,
+				B8CFAF822A18DFFC00C92CC1 /* Delm-Medium.otf in Resources */,
 				B8CFAF592A18DD7400C92CC1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
