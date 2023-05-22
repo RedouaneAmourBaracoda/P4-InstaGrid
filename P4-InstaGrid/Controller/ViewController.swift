@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     var swipeGesture: UISwipeGestureRecognizer?
     var currentPlusButtonSelected: UIButton?
+    var plusButtonsAlreadySelected: [UIButton] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
         getOrientation()
     }
     
@@ -52,7 +54,20 @@ class ViewController: UIViewController {
     
     @IBAction func plusButtonTapped(_ sender: UIButton) {
         currentPlusButtonSelected = plusButtonsCollection[sender.tag - 1]
+        guard let button = currentPlusButtonSelected else { return }
+        if !buttonAlreadySelected(sender) { plusButtonsAlreadySelected.append(button) }
         selectImage()
+    }
+    
+    func buttonAlreadySelected(_ sender: UIButton) -> Bool {
+        var output: Bool = false
+        for button in plusButtonsAlreadySelected {
+            if button.tag == sender.tag {
+                output = true
+                break
+            }
+        }
+        return output
     }
     
     
@@ -99,6 +114,7 @@ class ViewController: UIViewController {
 
     @IBAction func layoutButton(_ sender: UIButton) {
         selectedLayout(sender)
+        changeCentralView(sender)
     }
     
     func selectedLayout(_ sender: UIButton){
@@ -109,6 +125,33 @@ class ViewController: UIViewController {
         }
         layoutCollection[sender.tag-1].setImage(UIImage(named: "Selected-1"), for: .normal)
         layoutCollection[sender.tag-1].tintColor = .tintColor
+    }
+    
+    func changeCentralView(_ sender: UIButton){
+        for button in plusButtonsCollection {
+            button.isHidden = false
+        }
+        
+        switch sender.tag {
+        case 1: adaptLayout1()
+        case 2: adaptLayout2()
+        default: break
+        }
+    }
+    
+///     Adapt layout for the two plus buttons at the top.
+    func adaptLayout1() {
+        var topButtons: [UIButton] = []
+        for button in plusButtonsAlreadySelected {
+            if button.tag == 1 || button.tag == 2 {
+                topButtons.append(button)
+            }
+        }
+        
+    }
+///     Adapt layout for plus buttons at the bottom.
+    func adaptLayout2() {
+        
     }
 }
 
