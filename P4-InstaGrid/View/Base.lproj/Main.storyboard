@@ -95,7 +95,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="m9L-sH-8Pf" userLabel="Choice Sub Stack View">
-                                <rect key="frame" x="65" y="590" width="284" height="92.666666666666629"/>
+                                <rect key="frame" x="65" y="585.66666666666663" width="284" height="92.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bis-vg-9Lb">
                                         <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="92.666666666666671"/>
@@ -150,12 +150,15 @@
                                     <fontDescription key="titleFontDescription" name="Delm-Medium" family="Delm" pointSize="21"/>
                                     <color key="baseForegroundColor" systemColor="tintColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="clearTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="efQ-fN-yCf"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="skY-sn-tr9" userLabel="Toggle Button Stack View">
-                                <rect key="frame" x="66.666666666666657" y="535" width="280.66666666666674" height="45"/>
+                                <rect key="frame" x="137.33333333333331" y="535" width="139.33333333333331" height="40.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npM-9W-zZ4">
-                                        <rect key="frame" x="0.0" y="0.0" width="139.33333333333334" height="45"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="139.33333333333334" height="40.666666666666664"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Toggle photos">
                                             <backgroundConfiguration key="background"/>
@@ -165,14 +168,6 @@
                                         <connections>
                                             <action selector="toggleTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8m0-3F-63h"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZk-Gk-cwa">
-                                        <rect key="frame" x="141.33333333333331" y="0.0" width="139.33333333333331" height="45"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Ok">
-                                            <fontDescription key="titleFontDescription" name="Delm-Medium" family="Delm" pointSize="28"/>
-                                            <color key="baseForegroundColor" systemColor="tintColor"/>
-                                        </buttonConfiguration>
                                     </button>
                                 </subviews>
                                 <variation key="heightClass=compact" axis="vertical"/>
@@ -324,7 +319,6 @@
                     </view>
                     <connections>
                         <outlet property="mainBlueView" destination="KSE-We-KbO" id="i6x-VR-xyd"/>
-                        <outlet property="okButton" destination="nZk-Gk-cwa" id="5Mc-6J-bd3"/>
                         <outlet property="swipeLabel" destination="3jv-A7-JMa" id="J5p-ad-k1a"/>
                         <outlet property="toggleButton" destination="npM-9W-zZ4" id="P0p-0L-hpt"/>
                         <outletCollection property="layoutCollection" destination="Bis-vg-9Lb" collectionClass="NSMutableArray" id="IfQ-Fs-67t"/>

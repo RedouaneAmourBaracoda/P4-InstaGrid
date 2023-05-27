@@ -9,7 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var toggleButton: UIButton!
     @IBOutlet weak var mainBlueView: UIView!
     @IBOutlet weak var swipeLabel: UILabel!
@@ -25,10 +24,8 @@ class ViewController: UIViewController {
             print(canToggle)
             if canToggle == true {
                 toggleButton.isHidden = false
-                okButton.isHidden = false
             } else {
                 toggleButton.isHidden = true
-                okButton.isHidden = true
             }
         }
     }
@@ -64,8 +61,23 @@ class ViewController: UIViewController {
     }
     
     @objc func didSwipe() {
-         
+        print("Swipe")
+         share()
     }
+    
+    private func share() {
+        guard let image = mainBlueView.TransformMainBlueViewToImage else { return }
+        
+        let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        present(activityViewController, animated: true)
+        
+        // end of the share of the the central view and go back throught a return animation to the origin.
+        activityViewController.completionWithItemsHandler = { _, _, _, _ in
+            UIView.animate(withDuration: 0.5) {
+                self.mainBlueView.transform = .identity
+            }
+        }
+    } // end of :private func share
     
     func getOrientation() {
         if UIDevice.current.orientation == .portrait {
@@ -141,7 +153,6 @@ class ViewController: UIViewController {
 
     @IBAction func layoutButton(_ sender: UIButton) {
         selectedLayout(sender)
-        changeCentralView(sender)
     }
     
     func selectedLayout(_ sender: UIButton){
@@ -152,24 +163,26 @@ class ViewController: UIViewController {
         }
         layoutCollection[sender.tag-1].setImage(UIImage(named: "Selected-1"), for: .normal)
         layoutCollection[sender.tag-1].tintColor = .tintColor
-    }
-    
-    func changeCentralView(_ sender: UIButton){
-        for button in plusButtonsCollection {
-            button.isHidden = false
-        }
         
         switch sender.tag {
         case 1:
             currentLayout = .layout1
-            adaptLayout1()
+            changeCentralView(adaptLayout1)
         case 2:
             currentLayout = .layout2
-            adaptLayout2()
+            changeCentralView(adaptLayout2)
         default:
             currentLayout = .layout3
-            canToggle = false
+            changeCentralView(adaptLayout3)
         }
+        
+    }
+    
+    func changeCentralView(_ adaptLayout: () -> Void){
+        for button in plusButtonsCollection {
+            button.isHidden = false
+        }
+        adaptLayout()
     }
     
 ///     Adapt layout for the two plus buttons at the top.
@@ -223,6 +236,15 @@ class ViewController: UIViewController {
             canToggle = true
         }
     }
+    
+    func adaptLayout3() {
+        canToggle = false
+        for button in plusButtonsAlreadySelected {
+            button.isHidden = false
+        }
+    }
+    
+    
 
     @IBAction func toggleTapped(_ sender: UIButton) {
         switch currentLayout {
@@ -255,6 +277,15 @@ class ViewController: UIViewController {
             plusButtonsCollection[secondIndex].isHidden = false
         }
     }
+    
+    @IBAction func clearTapped(_ sender: UIButton) {
+        for button in plusButtonsCollection {
+            button.setImage(UIImage(named: "Plus"), for: .normal)
+        }
+        selectedLayout(layoutCollection[2])
+        plusButtonsAlreadySelected.removeAll()
+    }
+
 }
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -270,6 +301,17 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.plusButtonsAlreadySelected.removeAll { $0.tag == self.currentPlusButtonSelected?.tag }
         self.dismiss(animated: true)
+    }
+}
+
+extension UIView {
+    /// allows to transform the myMainBlueView grid scafold into a simple image 2D
+    var TransformMainBlueViewToImage: UIImage? {
+        UIGraphicsBeginImageContext(self.bounds.size)
+        self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
+        UIGraphicsEndImageContext()
+        return image // image flattened
     }
 }
 
