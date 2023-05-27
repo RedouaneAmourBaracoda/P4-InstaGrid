@@ -162,11 +162,14 @@
                                             <fontDescription key="titleFontDescription" name="Delm-Medium" family="Delm" pointSize="24"/>
                                             <color key="baseForegroundColor" systemColor="tintColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="toggleTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8m0-3F-63h"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nZk-Gk-cwa">
                                         <rect key="frame" x="141.33333333333331" y="0.0" width="139.33333333333331" height="45"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="OK">
+                                        <buttonConfiguration key="configuration" style="plain" title="Ok">
                                             <fontDescription key="titleFontDescription" name="Delm-Medium" family="Delm" pointSize="28"/>
                                             <color key="baseForegroundColor" systemColor="tintColor"/>
                                         </buttonConfiguration>
@@ -321,7 +324,9 @@
                     </view>
                     <connections>
                         <outlet property="mainBlueView" destination="KSE-We-KbO" id="i6x-VR-xyd"/>
+                        <outlet property="okButton" destination="nZk-Gk-cwa" id="5Mc-6J-bd3"/>
                         <outlet property="swipeLabel" destination="3jv-A7-JMa" id="J5p-ad-k1a"/>
+                        <outlet property="toggleButton" destination="npM-9W-zZ4" id="P0p-0L-hpt"/>
                         <outletCollection property="layoutCollection" destination="Bis-vg-9Lb" collectionClass="NSMutableArray" id="IfQ-Fs-67t"/>
                         <outletCollection property="layoutCollection" destination="sGk-RH-9P8" collectionClass="NSMutableArray" id="GVU-BQ-9gm"/>
                         <outletCollection property="layoutCollection" destination="H1o-E3-zy2" collectionClass="NSMutableArray" id="vyK-LQ-rfl"/>

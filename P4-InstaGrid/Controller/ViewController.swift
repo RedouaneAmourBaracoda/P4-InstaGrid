@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var okButton: UIButton!
+    @IBOutlet weak var toggleButton: UIButton!
     @IBOutlet weak var mainBlueView: UIView!
     @IBOutlet weak var swipeLabel: UILabel!
     @IBOutlet var layoutCollection: [UIButton]!
@@ -17,6 +19,29 @@ class ViewController: UIViewController {
     var swipeGesture: UISwipeGestureRecognizer?
     var currentPlusButtonSelected: UIButton?
     var plusButtonsAlreadySelected: [UIButton] = []
+    var currentLayout: Layout = .layout3
+    var canToggle: Bool = false {
+        didSet {
+            print(canToggle)
+            if canToggle == true {
+                toggleButton.isHidden = false
+                okButton.isHidden = false
+            } else {
+                toggleButton.isHidden = true
+                okButton.isHidden = true
+            }
+        }
+    }
+    
+    var toggleUpStatus: Bool = false
+    var toggleDownStatus: Bool = false
+
+    
+    enum Layout {
+        case layout1
+        case layout2
+        case layout3
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +50,7 @@ class ViewController: UIViewController {
         swipeGesture?.direction = .up
         guard let swipeGesture = swipeGesture else { return }
         mainBlueView.addGestureRecognizer(swipeGesture)
+        toggleButton.isHidden = true
     }
     
     override func viewDidLayoutSubviews() {
@@ -40,7 +66,7 @@ class ViewController: UIViewController {
     @objc func didSwipe() {
          
     }
-
+    
     func getOrientation() {
         if UIDevice.current.orientation == .portrait {
             swipeLabel.text = "Swipe up to share"
@@ -99,6 +125,7 @@ class ViewController: UIViewController {
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
             self.dismiss(animated: true)
+            self.plusButtonsAlreadySelected.removeAll { $0.tag == self.currentPlusButtonSelected?.tag }
         }
         
         
@@ -133,25 +160,100 @@ class ViewController: UIViewController {
         }
         
         switch sender.tag {
-        case 1: adaptLayout1()
-        case 2: adaptLayout2()
-        default: break
+        case 1:
+            currentLayout = .layout1
+            adaptLayout1()
+        case 2:
+            currentLayout = .layout2
+            adaptLayout2()
+        default:
+            currentLayout = .layout3
+            canToggle = false
         }
     }
     
 ///     Adapt layout for the two plus buttons at the top.
     func adaptLayout1() {
-        var topButtons: [UIButton] = []
+        var topButtonsSelected: [UIButton] = []
         for button in plusButtonsAlreadySelected {
+            print(button.tag)
             if button.tag == 1 || button.tag == 2 {
-                topButtons.append(button)
+                topButtonsSelected.append(button)
             }
         }
         
+        if topButtonsSelected.count == 0 {
+            plusButtonsCollection[1].isHidden = true
+            canToggle = false
+        } else if topButtonsSelected.count == 1 {
+            if topButtonsSelected[0].tag == 1 {
+                plusButtonsCollection[1].isHidden = true
+                canToggle = false
+            } else {
+                plusButtonsCollection[0].isHidden = true
+                canToggle = false
+            }
+        } else { // 2 pictures : can toggle
+            plusButtonsCollection[1].isHidden = true
+            canToggle = true
+        }
     }
 ///     Adapt layout for plus buttons at the bottom.
     func adaptLayout2() {
+        var bottomButtonsSelected: [UIButton] = []
+        for button in plusButtonsAlreadySelected {
+            if button.tag == 3 || button.tag == 4 {
+                bottomButtonsSelected.append(button)
+            }
+        }
         
+        if bottomButtonsSelected.count == 0 {
+            plusButtonsCollection[3].isHidden = true
+            canToggle = false
+        } else if bottomButtonsSelected.count == 1 {
+            if bottomButtonsSelected[0].tag == 3 {
+                plusButtonsCollection[3].isHidden = true
+                canToggle = false
+            } else {
+                plusButtonsCollection[2].isHidden = true
+                canToggle = false
+            }
+        } else { // 2 pictures: can toggle.
+            plusButtonsCollection[3].isHidden = true
+            canToggle = true
+        }
+    }
+
+    @IBAction func toggleTapped(_ sender: UIButton) {
+        switch currentLayout {
+        case .layout1:
+            swapImages(toggleUpStatus, .layout1)
+            toggleUpStatus.toggle()
+        case .layout2:
+            swapImages(toggleDownStatus, .layout2)
+            toggleDownStatus.toggle()
+        case .layout3:
+            break
+        }
+    }
+    
+    func swapImages(_ toggleStatus: Bool, _ layout: Layout){
+        let firstIndex: Int
+        let secondIndex: Int
+        if layout == .layout1 {
+            firstIndex = 0
+            secondIndex = 1
+        } else {
+            firstIndex = 2
+            secondIndex = 3
+        }
+        if toggleStatus {
+            plusButtonsCollection[firstIndex].isHidden = false
+            plusButtonsCollection[secondIndex].isHidden = true
+        } else {
+            plusButtonsCollection[firstIndex].isHidden = true
+            plusButtonsCollection[secondIndex].isHidden = false
+        }
     }
 }
 
@@ -161,6 +263,12 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         let selectedImage = info[.originalImage] as? UIImage
         guard let button = currentPlusButtonSelected else { return }
         button.setImage(selectedImage, for: .normal)
+        button.imageView?.contentMode = .scaleAspectFill
+        self.dismiss(animated: true)
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.plusButtonsAlreadySelected.removeAll { $0.tag == self.currentPlusButtonSelected?.tag }
         self.dismiss(animated: true)
     }
 }
