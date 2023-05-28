@@ -21,7 +21,6 @@ class ViewController: UIViewController {
     var currentLayout: Layout = .layout3
     var canToggle: Bool = false {
         didSet {
-            print(canToggle)
             if canToggle == true {
                 toggleButton.isHidden = false
             } else {
@@ -62,11 +61,33 @@ class ViewController: UIViewController {
     
     @objc func didSwipe() {
         print("Swipe")
-         share()
+        translate()
+    }
+    
+    private func translate() {
+        if UIDevice.current.orientation == .portrait {
+            let top = CGAffineTransformMakeTranslation(0, -700)
+            UIView.animate(withDuration: 0.8, delay: 0.0, options: [], animations: {
+                // Add the transformation in this block
+                // self.container is your view that you want to animate
+                self.mainBlueView.transform = top
+            }) { _ in
+                self.share()
+            }
+        } else {
+            let left = CGAffineTransformMakeTranslation(-700, 0)
+            UIView.animate(withDuration: 0.8, delay: 0.0, options: [], animations: {
+                // Add the transformation in this block
+                // self.container is your view that you want to animate
+                self.mainBlueView.transform = left
+            }) { _ in
+                self.share()
+            }
+        }
     }
     
     private func share() {
-        guard let image = mainBlueView.TransformMainBlueViewToImage else { return }
+        guard let image = mainBlueView.TransformMainBlueViewToSharableImage else { return }
         
         let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         present(activityViewController, animated: true)
@@ -189,7 +210,6 @@ class ViewController: UIViewController {
     func adaptLayout1() {
         var topButtonsSelected: [UIButton] = []
         for button in plusButtonsAlreadySelected {
-            print(button.tag)
             if button.tag == 1 || button.tag == 2 {
                 topButtonsSelected.append(button)
             }
@@ -306,7 +326,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
 
 extension UIView {
     /// allows to transform the myMainBlueView grid scafold into a simple image 2D
-    var TransformMainBlueViewToImage: UIImage? {
+    var TransformMainBlueViewToSharableImage: UIImage? {
         UIGraphicsBeginImageContext(self.bounds.size)
         self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
         guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
