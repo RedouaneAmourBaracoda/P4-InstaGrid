@@ -60,7 +60,6 @@ class ViewController: UIViewController {
     }
     
     @objc func didSwipe() {
-        print("Swipe")
         translate()
     }
     
@@ -68,8 +67,6 @@ class ViewController: UIViewController {
         if UIDevice.current.orientation == .portrait {
             let top = CGAffineTransformMakeTranslation(0, -700)
             UIView.animate(withDuration: 0.8, delay: 0.0, options: [], animations: {
-                // Add the transformation in this block
-                // self.container is your view that you want to animate
                 self.mainBlueView.transform = top
             }) { _ in
                 self.share()
@@ -77,8 +74,6 @@ class ViewController: UIViewController {
         } else {
             let left = CGAffineTransformMakeTranslation(-700, 0)
             UIView.animate(withDuration: 0.8, delay: 0.0, options: [], animations: {
-                // Add the transformation in this block
-                // self.container is your view that you want to animate
                 self.mainBlueView.transform = left
             }) { _ in
                 self.share()
@@ -88,17 +83,14 @@ class ViewController: UIViewController {
     
     private func share() {
         guard let image = mainBlueView.TransformMainBlueViewToSharableImage else { return }
-        
         let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         present(activityViewController, animated: true)
-        
-        // end of the share of the the central view and go back throught a return animation to the origin.
         activityViewController.completionWithItemsHandler = { _, _, _, _ in
             UIView.animate(withDuration: 0.5) {
                 self.mainBlueView.transform = .identity
             }
         }
-    } // end of :private func share
+    }
     
     func getOrientation() {
         if UIDevice.current.orientation == .portrait {
