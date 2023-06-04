@@ -6,11 +6,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="ThirstySoftRegular.otf">
-            <string>ThirstySoftRegular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -27,24 +22,12 @@
                                     <constraint firstAttribute="width" constant="80" id="ez7-UR-M6S"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiR-6t-zw2">
-                                <rect key="frame" x="153" y="352" width="87" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="87" id="I7Q-dm-QmA"/>
-                                    <constraint firstAttribute="height" constant="26" id="aDt-k3-leJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ThirstySoftRegular" family="Thirsty Soft" pointSize="22"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.74092841149999999" green="0.83925926689999997" blue="0.88614374399999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="pQn-4z-zad" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="1XR-V6-f12"/>
                             <constraint firstItem="pQn-4z-zad" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7qP-sD-Szg"/>
-                            <constraint firstItem="UiR-6t-zw2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="YfH-Gy-fR2"/>
-                            <constraint firstItem="pQn-4z-zad" firstAttribute="top" secondItem="UiR-6t-zw2" secondAttribute="bottom" constant="8" id="zN4-WY-muy"/>
                         </constraints>
                     </view>
                 </viewController>

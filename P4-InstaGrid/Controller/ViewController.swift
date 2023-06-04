@@ -49,16 +49,22 @@ class ViewController: UIViewController {
         toggleButton.isHidden = true
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        getOrientation()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let name = UIDevice.orientationDidChangeNotification
+        NotificationCenter.default.addObserver(self, selector: #selector(getOrientation), name: name, object: nil)
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        getOrientation()
+    @objc func getOrientation() {
+        if UIDevice.current.orientation == .portrait {
+            swipeLabel.text = "Swipe up to share"
+            swipeGesture?.direction = .up
+        } else {
+            swipeLabel.text = "Swipe left to share"
+            swipeGesture?.direction = .left
+        }
     }
-    
+
     @objc func didSwipe() {
         translate()
     }
@@ -91,17 +97,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-    func getOrientation() {
-        if UIDevice.current.orientation == .portrait {
-            swipeLabel.text = "Swipe up to share"
-            swipeGesture?.direction = .up
-        } else {
-            swipeLabel.text = "Swipe left to share"
-            swipeGesture?.direction = .left
-        }
-    }
-    
     
     @IBAction func plusButtonTapped(_ sender: UIButton) {
         currentPlusButtonSelected = plusButtonsCollection[sender.tag - 1]

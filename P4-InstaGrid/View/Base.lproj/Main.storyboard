@@ -173,18 +173,18 @@
                                 <variation key="heightClass=compact" axis="vertical"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gDN-Dz-4WJ" userLabel="Swipe Stack View">
-                                <rect key="frame" x="133" y="121" width="148" height="72"/>
+                                <rect key="frame" x="145.66666666666666" y="121" width="122.66666666666666" height="72"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="3YC-aH-rVl">
-                                        <rect key="frame" x="62.666666666666657" y="0.0" width="23" height="37.333333333333336"/>
+                                        <rect key="frame" x="50" y="0.0" width="23" height="37.333333333333336"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="23" id="4ep-C4-Ev0"/>
                                             <constraint firstAttribute="height" constant="37.329999999999998" id="hYq-dP-p9u"/>
                                         </constraints>
                                         <variation key="heightClass=compact" image="Arrow Left"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jv-A7-JMa">
-                                        <rect key="frame" x="0.0" y="45.333333333333343" width="148" height="26.666666666666671"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jv-A7-JMa">
+                                        <rect key="frame" x="0.0" y="45.333333333333343" width="122.66666666666667" height="26.666666666666671"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="26.670000000000002" id="cXD-EJ-RBi"/>
                                         </constraints>
