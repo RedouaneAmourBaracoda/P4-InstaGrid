@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet var plusButtonsCollection: [UIButton]!
     
     var swipeGesture: UISwipeGestureRecognizer?
+    var appropriateTranslation: CGAffineTransform?
     var currentPlusButtonSelected: UIButton?
     var plusButtonsAlreadySelected: [UIButton] = []
     var currentLayout: Layout = .layout3
@@ -31,19 +32,18 @@ class ViewController: UIViewController {
     
     var toggleUpStatus: Bool = false
     var toggleDownStatus: Bool = false
-
     
     enum Layout {
         case layout1
         case layout2
         case layout3
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCollection[2].setImage(UIImage(named: "Selected-1"), for: .normal)
         swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(didSwipe))
-        swipeGesture?.direction = .up
+        getOrientation()
         guard let swipeGesture = swipeGesture else { return }
         mainBlueView.addGestureRecognizer(swipeGesture)
         toggleButton.isHidden = true
@@ -56,37 +56,31 @@ class ViewController: UIViewController {
     }
     
     @objc func getOrientation() {
-        if UIDevice.current.orientation == .portrait {
+        let orientation = UIDevice.current.orientation
+        if orientation == .portrait {
             swipeLabel.text = "Swipe up to share"
             swipeGesture?.direction = .up
+            appropriateTranslation = CGAffineTransformMakeTranslation(0, -700)
+        } else if orientation == .unknown {
+            swipeLabel.text = "Swipe up or left to share"
+            swipeGesture?.direction = .up
+            appropriateTranslation = CGAffineTransformMakeTranslation(0, -700)
         } else {
             swipeLabel.text = "Swipe left to share"
             swipeGesture?.direction = .left
+            appropriateTranslation = CGAffineTransformMakeTranslation(-700, 0)
         }
     }
 
     @objc func didSwipe() {
-        translate()
-    }
-    
-    private func translate() {
-        if UIDevice.current.orientation == .portrait {
-            let top = CGAffineTransformMakeTranslation(0, -700)
-            UIView.animate(withDuration: 0.8, delay: 0.0, options: [], animations: {
-                self.mainBlueView.transform = top
-            }) { _ in
-                self.share()
-            }
-        } else {
-            let left = CGAffineTransformMakeTranslation(-700, 0)
-            UIView.animate(withDuration: 0.8, delay: 0.0, options: [], animations: {
-                self.mainBlueView.transform = left
-            }) { _ in
-                self.share()
-            }
+        UIView.animate(withDuration: 0.8, delay: 0.0, options: [], animations: {
+            guard let translation = self.appropriateTranslation else { return }
+            self.mainBlueView.transform = translation
+        }) { _ in
+            self.share()
         }
     }
-    
+
     private func share() {
         guard let image = mainBlueView.TransformMainBlueViewToSharableImage else { return }
         let activityViewController = UIActivityViewController(activityItems: [image], applicationActivities: nil)
@@ -164,94 +158,63 @@ class ViewController: UIViewController {
     }
     
     func selectedLayout(_ sender: UIButton){
+        clearLayoutImages()
+        layoutCollection[sender.tag-1].setImage(UIImage(named: "Selected-1"), for: .normal)
+        layoutCollection[sender.tag-1].tintColor = .tintColor
+        
+        for button in plusButtonsCollection {
+            button.isHidden = false
+        }
+        switch sender.tag {
+        case 1:
+            currentLayout = .layout1
+            adaptLayout(firstIndex: 0, secondIndex: 1)
+        case 2:
+            currentLayout = .layout2
+            adaptLayout(firstIndex: 2, secondIndex: 3)
+        default:
+            currentLayout = .layout3
+            canToggle = false
+            for button in plusButtonsAlreadySelected {
+                button.isHidden = false
+            }
+        }
+    }
+
+    func clearLayoutImages() {
         let layoutImages = ["Layout 1", "Layout 2", "Layout 3"]
         for index in 0...layoutCollection.count - 1 {
             layoutCollection[index].setImage(UIImage(named: layoutImages[index]), for: .normal)
             layoutCollection[index].tintColor = .clear
         }
-        layoutCollection[sender.tag-1].setImage(UIImage(named: "Selected-1"), for: .normal)
-        layoutCollection[sender.tag-1].tintColor = .tintColor
-        
-        switch sender.tag {
-        case 1:
-            currentLayout = .layout1
-            changeCentralView(adaptLayout1)
-        case 2:
-            currentLayout = .layout2
-            changeCentralView(adaptLayout2)
-        default:
-            currentLayout = .layout3
-            changeCentralView(adaptLayout3)
-        }
-        
     }
-    
-    func changeCentralView(_ adaptLayout: () -> Void){
-        for button in plusButtonsCollection {
-            button.isHidden = false
-        }
-        adaptLayout()
-    }
-    
-///     Adapt layout for the two plus buttons at the top.
-    func adaptLayout1() {
-        var topButtonsSelected: [UIButton] = []
+
+    func adaptLayout(firstIndex: Int, secondIndex: Int) {
+        let firstTag: Int = firstIndex + 1
+        let secondTag: Int = secondIndex + 1
+        var buttonsSelected: [UIButton] = []
         for button in plusButtonsAlreadySelected {
-            if button.tag == 1 || button.tag == 2 {
-                topButtonsSelected.append(button)
+            if button.tag == firstTag || button.tag == secondTag {
+                buttonsSelected.append(button)
             }
         }
         
-        if topButtonsSelected.count == 0 {
-            plusButtonsCollection[1].isHidden = true
+        if buttonsSelected.count == 0 {
+            plusButtonsCollection[secondIndex].isHidden = true
             canToggle = false
-        } else if topButtonsSelected.count == 1 {
-            if topButtonsSelected[0].tag == 1 {
-                plusButtonsCollection[1].isHidden = true
+        } else if buttonsSelected.count == 1 {
+            if buttonsSelected[0].tag == firstTag {
+                plusButtonsCollection[secondIndex].isHidden = true
                 canToggle = false
             } else {
-                plusButtonsCollection[0].isHidden = true
-                canToggle = false
-            }
-        } else { // 2 pictures : can toggle
-            plusButtonsCollection[1].isHidden = true
-            canToggle = true
-        }
-    }
-///     Adapt layout for plus buttons at the bottom.
-    func adaptLayout2() {
-        var bottomButtonsSelected: [UIButton] = []
-        for button in plusButtonsAlreadySelected {
-            if button.tag == 3 || button.tag == 4 {
-                bottomButtonsSelected.append(button)
-            }
-        }
-        
-        if bottomButtonsSelected.count == 0 {
-            plusButtonsCollection[3].isHidden = true
-            canToggle = false
-        } else if bottomButtonsSelected.count == 1 {
-            if bottomButtonsSelected[0].tag == 3 {
-                plusButtonsCollection[3].isHidden = true
-                canToggle = false
-            } else {
-                plusButtonsCollection[2].isHidden = true
+                plusButtonsCollection[firstIndex].isHidden = true
                 canToggle = false
             }
         } else { // 2 pictures: can toggle.
-            plusButtonsCollection[3].isHidden = true
+            plusButtonsCollection[secondIndex].isHidden = true
             canToggle = true
         }
     }
-    
-    func adaptLayout3() {
-        canToggle = false
-        for button in plusButtonsAlreadySelected {
-            button.isHidden = false
-        }
-    }
-    
-    
 
     @IBAction func toggleTapped(_ sender: UIButton) {
         switch currentLayout {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -21,20 +21,20 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="P4_InstaGrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSE-We-KbO" userLabel="Main Blue View">
-                                <rect key="frame" x="40" y="201" width="334" height="334"/>
+                                <rect key="frame" x="40" y="269.66666666666669" width="313" height="313.00000000000006"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kZ9-rF-G2c" userLabel="Main Stack View">
-                                        <rect key="frame" x="10" y="10" width="314" height="314"/>
+                                        <rect key="frame" x="10" y="10" width="293" height="293"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="q8S-mu-WAC" userLabel="Top Sub Stack View">
-                                                <rect key="frame" x="0.0" y="0.0" width="314" height="152"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="293" height="141.33333333333334"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xu-uZ-ycv">
-                                                        <rect key="frame" x="0.0" y="0.0" width="152" height="152"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="141.33333333333334"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="Plus">
@@ -45,7 +45,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhn-iQ-mnU">
-                                                        <rect key="frame" x="162" y="0.0" width="152" height="152"/>
+                                                        <rect key="frame" x="151.66666666666663" y="0.0" width="141.33333333333337" height="141.33333333333334"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="" image="Plus"/>
@@ -57,10 +57,10 @@
                                                 <color key="tintColor" systemColor="linkColor"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="r3i-dr-WT1" userLabel="Bottom Sub Stack View">
-                                                <rect key="frame" x="0.0" y="162" width="314" height="152"/>
+                                                <rect key="frame" x="0.0" y="151.33333333333331" width="293" height="141.66666666666669"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iB-Ks-0pI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="152" height="152"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="141.66666666666666"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" image="Plus">
@@ -71,7 +71,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbG-ky-j0B">
-                                                        <rect key="frame" x="162" y="0.0" width="152" height="152"/>
+                                                        <rect key="frame" x="151.66666666666663" y="0.0" width="141.33333333333337" height="141.66666666666666"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="Plus"/>
                                                         <connections>
@@ -95,10 +95,10 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="m9L-sH-8Pf" userLabel="Choice Sub Stack View">
-                                <rect key="frame" x="65" y="585.66666666666663" width="284" height="92.666666666666629"/>
+                                <rect key="frame" x="65" y="633.33333333333337" width="263" height="85.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bis-vg-9Lb">
-                                        <rect key="frame" x="0.0" y="0.0" width="92.666666666666671" height="92.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="85.666666666666671"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Bis-vg-9Lb" secondAttribute="height" multiplier="1:1" id="PTM-ao-2qC"/>
                                         </constraints>
@@ -110,7 +110,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGk-RH-9P8">
-                                        <rect key="frame" x="95.666666666666657" y="0.0" width="92.666666666666657" height="92.666666666666671"/>
+                                        <rect key="frame" x="88.666666666666657" y="0.0" width="85.666666666666657" height="85.666666666666671"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="sGk-RH-9P8" secondAttribute="height" multiplier="1:1" id="ml5-kn-qOR"/>
                                         </constraints>
@@ -121,7 +121,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1o-E3-zy2">
-                                        <rect key="frame" x="191.33333333333331" y="0.0" width="92.666666666666686" height="92.666666666666671"/>
+                                        <rect key="frame" x="177.33333333333334" y="0.0" width="85.666666666666657" height="85.666666666666671"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="H1o-E3-zy2" secondAttribute="height" multiplier="1:1" id="hTc-tT-anq"/>
                                         </constraints>
@@ -135,7 +135,7 @@
                                 <variation key="heightClass=compact" axis="vertical"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipv-tj-lGq">
-                                <rect key="frame" x="140" y="6" width="134.33333333333337" height="44"/>
+                                <rect key="frame" x="129.33333333333331" y="65" width="134.33333333333331" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="d2s-oG-0lu"/>
                                 </constraints>
@@ -144,7 +144,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwo-TT-z2S" userLabel="My Clear Button">
-                                <rect key="frame" x="171.33333333333334" y="707.33333333333337" width="71.666666666666657" height="37.333333333333371"/>
+                                <rect key="frame" x="160.66666666666666" y="789.33333333333337" width="71.666666666666657" height="37.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="CLEAR">
                                     <fontDescription key="titleFontDescription" name="Delm-Medium" family="Delm" pointSize="21"/>
@@ -155,7 +155,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="skY-sn-tr9" userLabel="Toggle Button Stack View">
-                                <rect key="frame" x="137.33333333333331" y="535" width="139.33333333333331" height="40.666666666666629"/>
+                                <rect key="frame" x="127.00000000000001" y="582.66666666666663" width="139.33333333333337" height="40.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npM-9W-zZ4">
                                         <rect key="frame" x="0.0" y="0.0" width="139.33333333333334" height="40.666666666666664"/>
@@ -173,10 +173,10 @@
                                 <variation key="heightClass=compact" axis="vertical"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gDN-Dz-4WJ" userLabel="Swipe Stack View">
-                                <rect key="frame" x="145.66666666666666" y="121" width="122.66666666666666" height="72"/>
+                                <rect key="frame" x="135.33333333333334" y="189.66666666666666" width="122.66666666666666" height="71.999999999999972"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="3YC-aH-rVl">
-                                        <rect key="frame" x="50" y="0.0" width="23" height="37.333333333333336"/>
+                                        <rect key="frame" x="49.666666666666657" y="0.0" width="23" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="23" id="4ep-C4-Ev0"/>
                                             <constraint firstAttribute="height" constant="37.329999999999998" id="hYq-dP-p9u"/>
@@ -184,7 +184,7 @@
                                         <variation key="heightClass=compact" image="Arrow Left"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jv-A7-JMa">
-                                        <rect key="frame" x="0.0" y="45.333333333333343" width="122.66666666666667" height="26.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="45" width="122.66666666666666" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="26.670000000000002" id="cXD-EJ-RBi"/>
                                         </constraints>
@@ -240,6 +240,10 @@
                                 <exclude reference="U1b-m1-Xaz"/>
                                 <exclude reference="Vj8-bp-iEU"/>
                                 <exclude reference="XXi-Mi-v4X"/>
+                                <exclude reference="0kX-aw-hI0"/>
+                                <exclude reference="Hfc-bs-gWm"/>
+                                <exclude reference="VOJ-64-uid"/>
+                                <exclude reference="mlU-MP-2X4"/>
                                 <exclude reference="AFz-VN-Rsc"/>
                                 <exclude reference="qhy-1k-7Kw"/>
                                 <exclude reference="ubn-S1-l0A"/>
@@ -262,16 +266,14 @@
                                 <exclude reference="ekP-ib-tmZ"/>
                                 <exclude reference="ton-xl-Mhm"/>
                                 <exclude reference="upm-dN-SyI"/>
-                                <exclude reference="0kX-aw-hI0"/>
-                                <exclude reference="Hfc-bs-gWm"/>
-                                <exclude reference="VOJ-64-uid"/>
-                                <exclude reference="mlU-MP-2X4"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
                                 <include reference="Vj8-bp-iEU"/>
                                 <include reference="XXi-Mi-v4X"/>
+                                <include reference="Hfc-bs-gWm"/>
+                                <include reference="mlU-MP-2X4"/>
                                 <include reference="qhy-1k-7Kw"/>
                                 <include reference="z5q-vz-AdP"/>
                                 <include reference="ZH9-kQ-4tP"/>
@@ -281,8 +283,6 @@
                                 <include reference="Oak-B4-QgS"/>
                                 <include reference="bD0-Co-5bF"/>
                                 <include reference="ekP-ib-tmZ"/>
-                                <include reference="Hfc-bs-gWm"/>
-                                <include reference="mlU-MP-2X4"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -290,6 +290,7 @@
                                 <include reference="K71-eE-hh3"/>
                                 <include reference="ORz-2K-FEE"/>
                                 <include reference="U1b-m1-Xaz"/>
+                                <include reference="VOJ-64-uid"/>
                                 <include reference="ubn-S1-l0A"/>
                                 <include reference="7cy-2V-R4a"/>
                                 <include reference="HDH-FW-uor"/>
@@ -299,7 +300,6 @@
                                 <include reference="O2i-s4-Pop"/>
                                 <include reference="ton-xl-Mhm"/>
                                 <include reference="upm-dN-SyI"/>
-                                <include reference="VOJ-64-uid"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
@@ -307,13 +307,13 @@
                                 <exclude reference="K71-eE-hh3"/>
                                 <exclude reference="ORz-2K-FEE"/>
                                 <exclude reference="U1b-m1-Xaz"/>
+                                <exclude reference="VOJ-64-uid"/>
                                 <exclude reference="MeZ-4W-ZiW"/>
                                 <exclude reference="Lve-bP-KG6"/>
                                 <exclude reference="yzq-lS-sc1"/>
                                 <exclude reference="O2i-s4-Pop"/>
                                 <exclude reference="ton-xl-Mhm"/>
                                 <exclude reference="upm-dN-SyI"/>
-                                <exclude reference="VOJ-64-uid"/>
                             </mask>
                         </variation>
                     </view>
