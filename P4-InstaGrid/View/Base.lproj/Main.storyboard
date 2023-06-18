@@ -184,7 +184,7 @@
                                         <variation key="heightClass=compact" image="Arrow Left"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe to share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jv-A7-JMa">
-                                        <rect key="frame" x="0.0" y="45" width="122.66666666666666" height="27"/>
+                                        <rect key="frame" x="0.0" y="45" width="122.66666666666667" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="26.670000000000002" id="cXD-EJ-RBi"/>
                                         </constraints>
@@ -240,10 +240,6 @@
                                 <exclude reference="U1b-m1-Xaz"/>
                                 <exclude reference="Vj8-bp-iEU"/>
                                 <exclude reference="XXi-Mi-v4X"/>
-                                <exclude reference="0kX-aw-hI0"/>
-                                <exclude reference="Hfc-bs-gWm"/>
-                                <exclude reference="VOJ-64-uid"/>
-                                <exclude reference="mlU-MP-2X4"/>
                                 <exclude reference="AFz-VN-Rsc"/>
                                 <exclude reference="qhy-1k-7Kw"/>
                                 <exclude reference="ubn-S1-l0A"/>
@@ -266,14 +262,16 @@
                                 <exclude reference="ekP-ib-tmZ"/>
                                 <exclude reference="ton-xl-Mhm"/>
                                 <exclude reference="upm-dN-SyI"/>
+                                <exclude reference="0kX-aw-hI0"/>
+                                <exclude reference="Hfc-bs-gWm"/>
+                                <exclude reference="VOJ-64-uid"/>
+                                <exclude reference="mlU-MP-2X4"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="constraints">
                                 <include reference="Vj8-bp-iEU"/>
                                 <include reference="XXi-Mi-v4X"/>
-                                <include reference="Hfc-bs-gWm"/>
-                                <include reference="mlU-MP-2X4"/>
                                 <include reference="qhy-1k-7Kw"/>
                                 <include reference="z5q-vz-AdP"/>
                                 <include reference="ZH9-kQ-4tP"/>
@@ -283,6 +281,8 @@
                                 <include reference="Oak-B4-QgS"/>
                                 <include reference="bD0-Co-5bF"/>
                                 <include reference="ekP-ib-tmZ"/>
+                                <include reference="Hfc-bs-gWm"/>
+                                <include reference="mlU-MP-2X4"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -290,7 +290,6 @@
                                 <include reference="K71-eE-hh3"/>
                                 <include reference="ORz-2K-FEE"/>
                                 <include reference="U1b-m1-Xaz"/>
-                                <include reference="VOJ-64-uid"/>
                                 <include reference="ubn-S1-l0A"/>
                                 <include reference="7cy-2V-R4a"/>
                                 <include reference="HDH-FW-uor"/>
@@ -300,6 +299,7 @@
                                 <include reference="O2i-s4-Pop"/>
                                 <include reference="ton-xl-Mhm"/>
                                 <include reference="upm-dN-SyI"/>
+                                <include reference="VOJ-64-uid"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
@@ -307,13 +307,13 @@
                                 <exclude reference="K71-eE-hh3"/>
                                 <exclude reference="ORz-2K-FEE"/>
                                 <exclude reference="U1b-m1-Xaz"/>
-                                <exclude reference="VOJ-64-uid"/>
                                 <exclude reference="MeZ-4W-ZiW"/>
                                 <exclude reference="Lve-bP-KG6"/>
                                 <exclude reference="yzq-lS-sc1"/>
                                 <exclude reference="O2i-s4-Pop"/>
                                 <exclude reference="ton-xl-Mhm"/>
                                 <exclude reference="upm-dN-SyI"/>
+                                <exclude reference="VOJ-64-uid"/>
                             </mask>
                         </variation>
                     </view>

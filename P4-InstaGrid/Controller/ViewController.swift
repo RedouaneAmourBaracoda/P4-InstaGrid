@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var swipeLabel: UILabel!
     @IBOutlet var layoutCollection: [UIButton]!
     @IBOutlet var plusButtonsCollection: [UIButton]!
-    
+
     var swipeGesture: UISwipeGestureRecognizer?
     var appropriateTranslation: CGAffineTransform?
     var currentPlusButtonSelected: UIButton?
@@ -55,14 +55,11 @@ class ViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(getOrientation), name: name, object: nil)
     }
     
+    // NB: For unknown reason, device orientation state remains unexpectedly ".unknown" when the app starts. In that case, we intentionnaly set swipe up direction. So if device starts in landscape mode, you might need to swipe up and not left.
     @objc func getOrientation() {
         let orientation = UIDevice.current.orientation
-        if orientation == .portrait {
+        if orientation == .portrait || orientation == .unknown {
             swipeLabel.text = "Swipe up to share"
-            swipeGesture?.direction = .up
-            appropriateTranslation = CGAffineTransformMakeTranslation(0, -700)
-        } else if orientation == .unknown {
-            swipeLabel.text = "Swipe up or left to share"
             swipeGesture?.direction = .up
             appropriateTranslation = CGAffineTransformMakeTranslation(0, -700)
         } else {
