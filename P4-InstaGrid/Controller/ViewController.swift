@@ -255,30 +255,3 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let selectedImage = info[.originalImage] as? UIImage
-        guard let button = currentPlusButtonSelected else { return }
-        button.setImage(selectedImage, for: .normal)
-        button.imageView?.contentMode = .scaleAspectFill
-        self.dismiss(animated: true)
-    }
-
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        self.plusButtonsAlreadySelected.removeAll { $0.tag == self.currentPlusButtonSelected?.tag }
-        self.dismiss(animated: true)
-    }
-}
-
-extension UIView {
-    /// allows to transform the myMainBlueView grid scafold into a simple image 2D
-    var TransformMainBlueViewToSharableImage: UIImage? {
-        UIGraphicsBeginImageContext(self.bounds.size)
-        self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
-        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return nil }
-        UIGraphicsEndImageContext()
-        return image // image flattened
-    }
-}
-
